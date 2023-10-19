@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="378.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.salesjavafxgit.SaleDialogController">
+   <children>
+      <GridPane layoutX="40.0" layoutY="28.0" prefHeight="308.0" prefWidth="450.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="74.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="376.0" minWidth="10.0" prefWidth="376.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="165.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Client" />
+            <Label text="Date" GridPane.rowIndex="1" />
+            <Label text="Product" GridPane.rowIndex="2" />
+            <Label text="Itens" GridPane.rowIndex="3" />
+            <Label text="Value" GridPane.rowIndex="4" />
+            <ComboBox fx:id="comboboxSaleClient" prefHeight="25.0" prefWidth="265.0" promptText="Select Client..." GridPane.columnIndex="1" />
+            <DatePicker fx:id="datePickerSaleDate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <HBox prefHeight="39.0" prefWidth="376.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ComboBox fx:id="comboboxSaleProduct" prefHeight="25.0" prefWidth="228.0" />
+                  <TextField fx:id="textFieldSaleItemSaleQuantity" prefHeight="25.0" prefWidth="56.0" />
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#handleButtonAdd" text="Add" />
+               </children>
+            </HBox>
+            <TextField fx:id="textFieldSaleValue" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TableView fx:id="tableViewSaleItemSale" prefHeight="127.0" prefWidth="376.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <columns>
+                <TableColumn fx:id="tableColunItemSaleProduct" prefWidth="198.0" text="Product" />
+                <TableColumn fx:id="tableColumnItemSaleQuanity" prefWidth="70.0" text="Quantity" />
+                  <TableColumn fx:id="tableColumnItemSaleValue" prefWidth="102.0" text="Value" />
+              </columns>
+            </TableView>
+         </children>
+      </GridPane>
+      <Button fx:id="buttonSave" layoutX="201.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleButtonSave" text="Save" />
+      <Button fx:id="buttonCancel" layoutX="319.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleButtonCancel" text="Cancel" />
+   </children>
+</AnchorPane>
